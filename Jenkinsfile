@@ -1,3 +1,6 @@
+properties([
+  	buildDiscarder(logRotator(numToKeepStr: '5')),
+  	pipelineTriggers([snapshotDependencies()])])
 node {
     stage ("Build") {
         checkout scm
