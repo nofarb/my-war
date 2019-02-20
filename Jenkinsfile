@@ -3,6 +3,7 @@ properties([
   	pipelineTriggers([snapshotDependencies()])])
 node {
     stage ("Build") {
+        echo "changed it"
         checkout scm
         withMaven() {
             sh "./mvnw clean deploy"
